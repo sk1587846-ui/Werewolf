@@ -10,7 +10,7 @@ from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes, Callb
 from telegram.ext import MessageHandler, filters
 
 #============== CONFIG ==============
-BOT_TOKEN = "7756296028:AAEdYJdvi7GfG-HCKfv1X0-CN5o94XgkVT4"  # <--- replace with your token
+BOT_TOKEN = "Your bot token"  # <--- replace with your token
 PHASE_DURATION = 90   # seconds for each phase
 
 #============== GAME STATE ==============
