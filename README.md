@@ -1,25 +1,3 @@
-# Werewolf
-import asyncio
-import random
-import logging
-from telegram.error import NetworkError, TimedOut
-import time
-from collections import defaultdict
-from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
-from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes, CallbackQueryHandler
-from telegram.ext import MessageHandler, filters
-
-#============== CONFIG ==============
-BOT_TOKEN = "Your bot token"  # <--- replace with your token
-PHASE_DURATION = 90   # seconds for each phase
-
-#============== GAME STATE ==============
-# All games are stored by chat_id - each group has independent game state
-games = {}
-
-def init_game(chat_id: int):
-    """Initialize a fresh state for a game in given chat_id with enhanced roles"""
-    games[chat_id] = {
         "players": [],
         "roles": {},
         "alive": {},
